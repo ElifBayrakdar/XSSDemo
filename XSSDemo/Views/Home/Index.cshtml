@@ -1,0 +1,22 @@
+﻿@model XSSDemo.Models.User
+
+@{
+        ViewData["Title"] = "Home Page";
+    }
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome to my XSS Demo</h1>
+    </div>
+
+
+
+
+@if (Model != null && !string.IsNullOrEmpty(Model.Name))
+{
+    <div class="row">
+        <p>Safe output: @(Model.Name)</p>
+    </div>
+    <div class="row">
+        <p>Unsafe output: @Html.Raw(Model.Name)</p>
+    </div>
+}
