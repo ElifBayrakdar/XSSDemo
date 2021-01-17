@@ -4,7 +4,7 @@
     ViewData["Title"] = "SignUp";
 }
 
-<h1>SignUp</h1>
+<h1>Sign Up</h1>
 
 <hr />
 <div class="row">
@@ -33,11 +33,15 @@
 @if (Model != null && !string.IsNullOrEmpty(Model.Name))
 {
     <div class="row">
-        <p>Encoded output: @(Model.Name)</p>
+        <p>Model output: @(Model.Name)</p>
     </div>
     <div class="row">
-        <p>Not encoded output: @Html.Raw(Model.Name)</p>
+        <p>Html encoded output: @Html.Encode(Model.Name)</p>
     </div>
+    <div class="row">
+        <p>Raw output: @Html.Raw(Model.Name)</p>
+    </div>
+
 }
 
 
